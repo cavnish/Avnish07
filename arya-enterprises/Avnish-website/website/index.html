@@ -13,13 +13,13 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-         <div class="logo">
-          <img src="logo.png" alt="Arya Enterprises Logo">
-          <div class="logo-text">
-            <h1>ARYA ENTERPRISES</h1>
-            <span>Building Excellence Since 2018</span>
-          </div>
-        </div>
+            <div class="logo">
+                <img src="logo.png" alt="Arya Enterprises Logo">
+                <div class="logo-text">
+                    <h1>ARYA ENTERPRISES</h1>
+                    <span>Building Excellence Since 2018</span>
+                </div>
+            </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -70,6 +70,30 @@
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Office Design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Counter -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" data-count="150">0</div>
+                    <div class="counter-text">Projects Completed</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-count="75">0</div>
+                    <div class="counter-text">Happy Clients</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-count="8">0</div>
+                    <div class="counter-text">Years Experience</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-count="300">0</div>
+                    <div class="counter-text">Team Members</div>
                 </div>
             </div>
         </div>
@@ -233,7 +257,7 @@
                 </div>
                 
                 <div class="ai-loading" id="office-loading" style="display: none;">
-                    <i class="fas fa-spinner"></i>
+                    <i class="fas fa-spinner fa-spin"></i>
                     <p>Generating your design... This may take a moment</p>
                 </div>
                 
@@ -365,19 +389,19 @@
                 <h2>Our Portfolio</h2>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-project="1">
                     <div class="portfolio-content">
                         <h3>Modern Office Space</h3>
                         <p>Partitions, furniture & lighting solutions</p>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-project="2">
                     <div class="portfolio-content">
                         <h3>Electrical Works</h3>
                         <p>Commercial electrical installations</p>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-project="3">
                     <div class="portfolio-content">
                         <h3>Warehouse Transformation</h3>
                         <p>Epoxy flooring & mezzanine floors</p>
@@ -386,6 +410,41 @@
             </div>
         </div>
     </section>
+
+    <!-- Portfolio Modal -->
+    <div class="portfolio-modal" id="portfolioModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose">&times;</div>
+            <div class="modal-header">
+                <h3 id="modalTitle">Project Title</h3>
+                <p id="modalSubtitle">Project Category</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description" id="modalDescription">
+                    Project description will appear here.
+                </div>
+                <div class="modal-gallery" id="modalGallery">
+                    <!-- Gallery images will be added dynamically -->
+                </div>
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <h4>Project Details</h4>
+                        <p><strong>Location:</strong> <span id="projectLocation">Navi Mumbai</span></p>
+                        <p><strong>Size:</strong> <span id="projectSize">2,500 sq ft</span></p>
+                        <p><strong>Duration:</strong> <span id="projectDuration">6 weeks</span></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Services Provided</h4>
+                        <ul id="projectServices">
+                            <li>Office partitions</li>
+                            <li>Electrical works</li>
+                            <li>Lighting solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Why Choose Us Section -->
     <section class="section why-us">
@@ -432,13 +491,12 @@
             <div class="section-title">
                 <h2>What Our Clients Say</h2>
             </div>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        ARYA ENTERPRISES transformed our warehouse with their excellent epoxy flooring and rack systems. Their attention to detail was impressive and the project was completed ahead of schedule. The team was professional and responsive throughout the process.
-                    </div>
-                    <div class="testimonial-author">Rahul Sharma</div>
-                    <div class="testimonial-company">Director, Sharma Logistics</div>
+            <div class="testimonial-container">
+                <div class="testimonial-slides" id="testimonialSlides">
+                    <!-- Testimonial slides will be added dynamically -->
+                </div>
+                <div class="testimonial-nav" id="testimonialNav">
+                    <!-- Navigation dots will be added dynamically -->
                 </div>
             </div>
         </div>
@@ -478,7 +536,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Email</h4>
-                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="48293a3129662d263c2d3a383a213b2d3b79787a082f25292124662b2725">[email&#160;protected]</a></p>
+                                <p><a href="mailto:cavnish07@gmail.com">cavnish07@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -504,19 +562,22 @@
                     <h3>Request a Free Consultation</h3>
                     <form id="consultationForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
+                            <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
+                            <div class="error-message">Please enter your name</div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
+                            <label for="email">Email Address *</label>
                             <input type="email" id="email" name="email" required>
+                            <div class="error-message">Please enter a valid email</div>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone">Phone Number *</label>
                             <input type="tel" id="phone" name="phone" required>
+                            <div class="error-message">Please enter your phone number</div>
                         </div>
                         <div class="form-group">
-                            <label for="service">Service Interested In</label>
+                            <label for="service">Service Interested In *</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a Service</option>
                                 <option value="office">Office Solutions</option>
@@ -524,15 +585,15 @@
                                 <option value="warehouse">Warehouse Solutions</option>
                                 <option value="multiple">Multiple Services</option>
                             </select>
+                            <div class="error-message">Please select a service</div>
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message</label>
+                            <label for="message">Your Message *</label>
                             <textarea id="message" name="message" required></textarea>
+                            <div class="error-message">Please enter your message</div>
                         </div>
-                        <button type="submit" class="btn">Submit Request</button>
-                        <a href="https://wa.me/919975146866" class="btn btn-whatsapp" style="margin-top: 15px;">
-                            <i class="fab fa-whatsapp"></i> Message on WhatsApp
-                        </a>
+                        <button type="submit" class="btn" id="submitBtn">Submit Request</button>
+                        <div id="formMessage"></div>
                     </form>
                     <div id="successMessage">
                         <i class="fas fa-check-circle"></i> Thank you! Your consultation request has been sent. We'll contact you shortly.
@@ -582,7 +643,7 @@
                     <ul>
                         <li><i class="fas fa-phone-alt"></i> 6306602906</li>
                         <li><i class="fab fa-whatsapp"></i> 9975146866</li>
-                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5a3b28233b743f342e3f282a2833293f296b6a681a3d373b333674393537">[email&#160;protected]</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:cavnish07@gmail.com">cavnish07@gmail.com</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Office No.651, Near Transformer, Yadav Nagar, MIDC Road Taloja Navi Mumbai-400708.</li>
                     </ul>
                 </div>
@@ -597,8 +658,12 @@
     <a href="https://wa.me/919975146866" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
