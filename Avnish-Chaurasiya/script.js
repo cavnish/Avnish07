@@ -393,10 +393,10 @@ const projects = [
             "Safety systems"
         ],
         images: [
-            "electical/el1.jpg",
-            "electical/el2.jpg",
-            "electical/el3.jpg",
-            "electical/el4.jpg"
+            "https://images.unsplash.com/photo-1581093057305-3fe6ab6c1c78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1581092581010-4f0a6c7f4b5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1581092580508-1d0b6f5d8d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         ]
     },
     {
@@ -414,10 +414,10 @@ const projects = [
             "Industrial lighting"
         ],
         images: [
-            "warehouse/ware1.jpg",
-            "warehouse/ware2.jpg",
-            "warehouse/ware3.jpg",
-            "warehouse/ware4.jpg"
+            "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         ]
     }
 ];
