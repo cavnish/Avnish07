@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARYA ENTERPRISES | Office & Warehouse Solutions</title>
@@ -324,6 +325,10 @@
         }
         
         /* Services Section */
+         
+           
+    
+ 
         .services {
             background: var(--light);
         }
@@ -403,7 +408,7 @@
         }
         
         .service-content li::before {
-            content: "?";
+            content: "✔";
             color: var(--accent);
             font-size: 1.2rem;
             position: absolute;
@@ -452,7 +457,54 @@
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
-        
+       /* Section */
+.clients-section {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.clients-section .section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Slider wrapper */
+.logo-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+/* Track */
+.logo-track {
+  display: flex;
+  width: calc(200%); /* double for infinite loop */
+  animation: scroll 25s linear infinite;
+}
+
+.logo-track img {
+  height: 80px;
+  margin: 0 40px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%) drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  transform: scale(1.1);
+}
+
+/* Infinite scrolling */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
         /* Why Choose Us Section */
         .why-us {
             background: linear-gradient(to right, var(--primary), var(--primary-dark));
@@ -1540,7 +1592,7 @@
                     </div>
                     <div class="service-content">
                         <h3><i class="fas fa-building"></i> Office Solutions</h3>
-                        <ul>
+                        <ul class="">
                             <li><strong>Aluminum Partitions:</strong> Powder-coated, durable partitions for modern offices</li>
                             <li><strong>Modular Furniture:</strong> Custom workstations, conference tables, and storage solutions</li>
                             <li><strong>Gypsum Ceilings:</strong> POP gypsum ceilings for elegant office environments</li>
@@ -1557,7 +1609,7 @@
                     </div>
                     <div class="service-content">
                         <h3><i class="fas fa-bolt"></i> Electrical Works</h3>
-                        <ul>
+                        <ul class="custom-points">
                             <li>Complete electrical installations with licensed professionals</li>
                             <li>Lighting solutions (ceiling lights, tube lights, spotlights)</li>
                             <li>Cable management systems and panel works</li>
@@ -1574,7 +1626,7 @@
                     </div>
                     <div class="service-content">
                         <h3><i class="fas fa-warehouse"></i> Warehouse Solutions</h3>
-                        <ul>
+                        <ul class="custom-points">
                             <li><strong>Epoxy Flooring:</strong> 1mm-3mm thickness options with repair services</li>
                             <li><strong>MS Mezzanine Floors:</strong> Custom steel structures for optimal space utilization</li>
                             <li><strong>Warehouse Organization:</strong> Floor marking, rack marking, and safety systems</li>
@@ -1724,10 +1776,10 @@
                 </div>
                 <div>
                     <div class="service-gallery">
-                        <img src="off/office1" alt="Office Design">
-                        <img src="off/office2" alt="Office Furniture">
-                        <img src="off/office3" alt="Office Lighting">
-                        <img src="off/office4" alt="Office Space">
+                        <img src="off/office1.jpg" alt="Office Design">
+                        <img src="off/office2.jpg" alt="Office Furniture">
+                        <img src="office.jpg" alt="Office Lighting">
+                        <img src="off/office4.jpg" alt="Office Space">
                     </div>
                 </div>
             </div>
@@ -1872,7 +1924,41 @@
             </div>
         </div>
     </div>
+    <!-- ========== Our Client Community Section ========== -->
+<section class="clients-section">
+  <div class="container">
+    <h2 class="section-title">Our Client Community</h2>
 
+    <div class="logo-slider">
+      <div class="logo-track">
+        <!-- Your 10 logos -->
+        <img src="logos/client1.jpg" alt="Client 1">
+        <img src="logos/client2.jpg" alt="Client 2">
+        <img src="logos/client3.jpg" alt="Client 3">
+        <img src="logos/client4.jpg" alt="Client 4">
+        <img src="logos/client5.jpg" alt="Client 5">
+        <img src="logos/client6.jpg" alt="Client 6">
+        <img src="logos/client7.jpg" alt="Client 7">
+        <img src="logos/client8.jpg" alt="Client 8">
+        <img src="logos/client9.jpg" alt="Client 9">
+        <img src="logos/client10.jpg" alt="Client 10">
+
+        <!-- Duplicate for infinite effect -->
+        <img src="logos/client1.jpg" alt="Client 1">
+        <img src="logos/client2.jpg" alt="Client 2">
+        <img src="logos/client3.jpg" alt="Client 3">
+        <img src="logos/client4.jpg" alt="Client 4">
+        <img src="logos/client5.jpg" alt="Client 5">
+        <img src="logos/client6.jpg" alt="Client 6">
+        <img src="logos/client7.jpgg" alt="Client 7">
+        <img src="logos/client8.jpg" alt="Client 8">
+        <img src="logos/client9.jpg" alt="Client 9">
+        <img src="logos/client10.png" alt="Client 10">
+      </div>
+    </div>
+  </div>
+</section>
+  
     <!-- Why Choose Us Section -->
     <section class="section why-us">
         <div class="container">
@@ -1945,7 +2031,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Phone</h4>
-                                <p>8007522573</p>
+                                <p>9975146866</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -2070,7 +2156,7 @@
                 <div class="footer-col">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-phone-alt"></i>+91 8007522573</li>
+                        <li><i class="fas fa-phone-alt"></i>+91 9975146866</li>
                         <li><i class="fab fa-whatsapp"></i>+91 9975146866</li>
                         <li><i class="fas fa-envelope"></i>sales.india.ais@gmail.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> Office No.651, Near Transformer, Yadav Nagar, MIDC Road Taloja Navi Mumbai-400708.</li>
@@ -2399,7 +2485,7 @@ Message:%0D%0A${message}`;
                 images: [
                     "off/office1.jpg",
                     "off/office2.jpg",
-                    "off/office3.jpg",
+                    "office.jpg",
                     "off/office4.jpg"
                 ]
             },
@@ -2510,8 +2596,8 @@ Message:%0D%0A${message}`;
             },
             {
                 text: "The office renovation exceeded our expectations. The team at ARYA ENTERPRISES understood our vision perfectly and delivered a workspace that has significantly improved our team's productivity and morale.",
-                author: "Praveen Maurya",
-                company: "CEO, Yadav fabcon"
+                author: "Umesh.k.Chaurasiya",
+                company: "CEO & Founder, AARAV ENTERPRISES"
             },
             {
                 text: "We hired ARYA for electrical work in our new facility. Their licensed professionals ensured everything was up to code and completed efficiently. Their expertise saved us time and potential headaches down the road.",
@@ -2600,6 +2686,58 @@ Message:%0D%0A${message}`;
         
         // Start observing the counter section
         observer.observe(document.querySelector('.counter-section'));
+      
+  const track = document.querySelector('.logo-track');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // Pause animation on hover
+  track.addEventListener('mouseover', () => track.style.animationPlayState = 'paused');
+  track.addEventListener('mouseout', () => track.style.animationPlayState = 'running');
+
+  // Drag functionality
+  track.parentElement.addEventListener('mousedown', (e) => {
+    isDown = true;
+    track.style.animationPlayState = 'paused';
+    startX = e.pageX;
+    scrollLeft = track.offsetLeft;
+  });
+
+  track.parentElement.addEventListener('mouseleave', () => {
+    isDown = false;
+    track.style.animationPlayState = 'running';
+  });
+
+  track.parentElement.addEventListener('mouseup', () => {
+    isDown = false;
+    track.style.animationPlayState = 'running';
+  });
+
+  track.parentElement.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    let x = e.pageX - startX;
+    track.style.transform = `translateX(${x}px)`;
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  track.parentElement.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    track.style.animationPlayState = 'paused';
+  });
+
+  track.parentElement.addEventListener('touchmove', (e) => {
+    let touchMoveX = e.touches[0].clientX - touchStartX;
+    track.style.transform = `translateX(${touchMoveX}px)`;
+  });
+
+  track.parentElement.addEventListener('touchend', () => {
+    track.style.transform = `translateX(0)`;
+    track.style.animationPlayState = 'running';
+  });
+
     </script>
 </body>
 </html>
