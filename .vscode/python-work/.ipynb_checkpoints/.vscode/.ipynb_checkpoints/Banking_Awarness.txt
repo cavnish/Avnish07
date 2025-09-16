@@ -1,9 +1,0 @@
-Clerk ~ PO (Clerk(Pre+Mains)+Interview) 
-Subjects-GA(Current Affair(80% to 90%) + Banking Awarness(7% to 8%))
-         1.BANKING ,FINANCIAL & ECONOMY NEWS
-         2.GOV. SCHEMES(STATIC + Current BOTH)
-         3.AWARDS & HONOURS
-         4.SPORTS NEWS
-         5.RBI NEWS & CIRCULAR
-         6.RANKS REPORTS &INDEX
-         7.
