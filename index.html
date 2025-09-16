@@ -2073,7 +2073,8 @@
                 
                 <div class="contact-form">
                     <h3>Request a Free Consultation</h3>
-                    <form id="consultationForm">
+                    <form id="consultationForm" name="consultation" method="POST" data-netlify="true">
+                     <input type="hidden" name="form-name" value="consultation">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -2164,7 +2165,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 ARYA ENTERPRISES. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i></p>
+                <p>&copy; 2023 ARYA ENTERPRISES. All Rights Reserved. | Designed by Avnish Chaurasiya <i class="fas fa-heart" style="color: var(--accent);"></i></p>
             </div>
         </div>
     </footer>
@@ -2260,91 +2261,82 @@
         });
         
         // Form validation and submission
-        const consultationForm = document.getElementById('consultationForm');
-        const successMessage = document.getElementById('successMessage');
+        // Form validation and submission
+const consultationForm = document.getElementById('consultationForm');
+const successMessage = document.getElementById('successMessage');
+
+consultationForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let isValid = true;
+    
+    // Reset all error states
+    document.querySelectorAll('.form-group').forEach(group => {
+        group.classList.remove('error');
+    });
+    
+    // Validate name
+    const name = document.getElementById('name').value;
+    if (!name.trim()) {
+        document.querySelector('#name').closest('.form-group').classList.add('error');
+        isValid = false;
+    }
+    
+    // Validate email
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        document.querySelector('#email').closest('.form-group').classList.add('error');
+        isValid = false;
+    }
+    
+    // Validate phone
+    const phone = document.getElementById('phone').value;
+    if (!phone.trim()) {
+        document.querySelector('#phone').closest('.form-group').classList.add('error');
+        isValid = false;
+    }
+    
+    // Validate service
+    const service = document.getElementById('service').value;
+    if (!service) {
+        document.querySelector('#service').closest('.form-group').classList.add('error');
+        isValid = false;
+    }
+    
+    // Validate message
+    const message = document.getElementById('message').value;
+    if (!message.trim()) {
+        document.querySelector('#message').closest('.form-group').classList.add('error');
+        isValid = false;
+    }
+    
+    if (!isValid) return;
+    
+    // Show success message
+    successMessage.style.display = 'block';
+    
+    // Submit the form to Netlify
+    const formData = new FormData(consultationForm);
+    
+    fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+    }).then(() => {
+        // Reset form
+        consultationForm.reset();
         
-        consultationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            let isValid = true;
-            
-            // Reset all error states
-            document.querySelectorAll('.form-group').forEach(group => {
-                group.classList.remove('error');
-            });
-            
-            // Validate name
-            const name = document.getElementById('name').value;
-            if (!name.trim()) {
-                document.querySelector('#name').closest('.form-group').classList.add('error');
-                isValid = false;
-            }
-            
-            // Validate email
-            const email = document.getElementById('email').value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                document.querySelector('#email').closest('.form-group').classList.add('error');
-                isValid = false;
-            }
-            
-            // Validate phone
-            const phone = document.getElementById('phone').value;
-            if (!phone.trim()) {
-                document.querySelector('#phone').closest('.form-group').classList.add('error');
-                isValid = false;
-            }
-            
-            // Validate service
-            const service = document.getElementById('service').value;
-            if (!service) {
-                document.querySelector('#service').closest('.form-group').classList.add('error');
-                isValid = false;
-            }
-            
-            // Validate message
-            const message = document.getElementById('message').value;
-            if (!message.trim()) {
-                document.querySelector('#message').closest('.form-group').classList.add('error');
-                isValid = false;
-            }
-            
-            if (!isValid) return;
-            
-            // Prepare the SMS content
-            const smsBody = `New Consultation Request:%0A%0A
-Name: ${name}%0A
-Email: ${email}%0A
-Phone: ${phone}%0A
-Service: ${service}%0A
-Message: ${message}`;
-            
-            // Prepare the email content
-            const subject = `New Consultation Request from ${name}`;
-            const emailBody = `Name: ${name}%0D%0A
-Email: ${email}%0D%0A
-Phone: ${phone}%0D%0A
-Service: ${service}%0D%0A%0D%0A
-Message:%0D%0A${message}`;
-            
-            // Send email
-            window.open(`cavnish07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`, '_blank');
-            
-            // Send WhatsApp message
-            window.open(`https://wa.me/919975146866?text=${encodeURIComponent(smsBody)}`, '_blank');
-            
-            // Show success message
-            successMessage.style.display = 'block';
-            
-            // Reset form
-            consultationForm.reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-        });
-        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 5000);
+    }).catch(error => {
+        console.error('Form submission error:', error);
+        alert('There was an error submitting the form. Please try again.');
+        successMessage.style.display = 'none';
+    });
+});
         // Service page navigation
         window.addEventListener('hashchange', function() {
             const hash = window.location.hash;
