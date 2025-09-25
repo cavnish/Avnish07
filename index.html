@@ -713,7 +713,7 @@ nav ul li a:hover::after {
         /* Slider wrapper */
         .logo-slider {
             position: relative;
-            width: 100%;
+            width: max-content;
             overflow: hidden;
             cursor: grab;
         }
@@ -721,24 +721,24 @@ nav ul li a:hover::after {
         /* Track */
         .logo-track {
             display: flex;
-            width: calc(200%);
-            animation: scroll 40s linear infinite;
+            width: max-content;
+            animation: scroll 50s linear infinite;
         }
 
         .logo-track img {
-            height: 80px;
-            width: 150px;
-            margin: 0 40px;
-            flex-shrink: 0;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
+    height: 80px;
+    width: 150px;
+    margin: 0 40px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
 
-        .logo-track img:hover {
-            filter: grayscale(0%) drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-            transform: scale(1.1);
-            transform-origin: center;
-        }
+.logo-track img:hover {
+    transform: scale(1.1);
+    transform-origin: center;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); /* only shadow on hover */
+}
+
 
         /* Infinite scrolling */
         @keyframes scroll {
@@ -1889,6 +1889,8 @@ nav ul li a:hover::after {
                     <img src="logos/client15.png" alt="Beyond Express">
                     <img src="logos/client16.jpg" alt="Mol logistics">
                     <img src="logos/client17.jpg" alt="Abbot logistics">
+                    <img src="logos/Pittie-Group-pvt.png" alt="Pittie Group pvt">
+                    
 
                     <!-- Duplicate set for infinite loop -->
                     <img src="logos/client1.jpg" alt="TVS logistics">
@@ -1908,6 +1910,7 @@ nav ul li a:hover::after {
                     <img src="logos/client15.png" alt="Beyond Express">
                     <img src="logos/client16.jpg" alt="Mol logistics">
                     <img src="logos/client17.jpg" alt="Abbot logistics">
+                    <img src="logos/Pittie-Group-pvt.png" alt="Pittie">
                 </div>
             </div>
         </div>
@@ -2012,7 +2015,7 @@ nav ul li a:hover::after {
                             </div>
                             <div class="contact-text">
                                 <h4>Phone</h4>
-                                <p>+91 9987791755</p>
+                                <p>+91 9987791755 || +91 6306602906</p>
                             </div>
                         </div>
                         <div class="contact-item">
