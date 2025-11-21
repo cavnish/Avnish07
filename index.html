@@ -10,691 +10,594 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
-      /* Enhanced Styles */
-:root {
-    --primary: #0056b3;
-    --primary-dark: #003d82;
-    --secondary: #333;
-    --accent: #ff7d00;
-    --accent-dark: #e67100;
-    --light: #f8f9fa;
-    --light-gray: #e9ecef;
-    --white: #ffffff;
-    --text: #444;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    --ai-primary: #6a11cb;
-    --ai-secondary: #2575fc;
-    --success: #28a745;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text);
-    line-height: 1.6;
-    background-color: #f9fbfd;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* REDUCED SECTION SPACING */
-section {
-    padding: 50px 0; /* Reduced from 80px */
-}
-
-.btn {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--white);
-    padding: 12px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(255, 125, 0, 0.2);
-}
-
-.btn:hover {
-    background: var(--accent-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 7px 14px rgba(255, 125, 0, 0.3);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--accent);
-    color: var(--accent);
-}
-
-.btn-outline:hover {
-    background: var(--accent);
-    color: var(--white);
-}
-
-.btn-whatsapp {
-    background: #25D366;
-    box-shadow: 0 4px 6px rgba(37, 211, 102, 0.3);
-}
-
-.btn-whatsapp:hover {
-    background: #128C7E;
-    transform: translateY(-3px);
-    box-shadow: 0 7px 14px rgba(18, 140, 126, 0.4);
-}
-
-/* REDUCED SECTION TITLE SPACING */
-.section-title {
-    text-align: center;
-    margin-bottom: 30px; /* Reduced from 50px */
-}
-
-.section-title h2 {
-    font-size: 2.2rem; /* Slightly smaller */
-    color: var(--primary);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 12px; /* Reduced */
-}
-
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    width: 60px; /* Reduced */
-    height: 3px; /* Reduced */
-    background: var(--accent);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
-/* Header Styles */
-header {
-    background: var(--white);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    transition: all 0.4s;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.logo-text h1 {
-    color: var(--primary);
-    font-size: 1.8rem;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.logo-text span {
-    color: var(--accent);
-    font-size: 0.9rem;
-    display: block;
-    letter-spacing: 1px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--secondary);
-    font-weight: 600;
-    transition: all 0.3s;
-    position: relative;
-    font-size: 1.05rem;
-}
-
-nav ul li a:hover {
-    color: var(--primary);
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background: var(--accent);
-    bottom: -5px;
-    left: 0;
-    transition: width 0.3s;
-    border-radius: 2px;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--primary);
-    cursor: pointer;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        background: var(--white);
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        padding: 20px;
-        box-shadow: var(--shadow);
-        border-radius: 8px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-}
-
-/* Hero Section - REDUCED SPACING */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Reduced from 100vh */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--white);
-    padding-top: 70px; /* Reduced from 80px */
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h2 {
-    font-size: 3.2rem; /* Reduced from 3.2rem */
-    margin-bottom: 20px;
-    font-weight: 800;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease;
-}
-
-.hero p {
-    font-size: 1.3rem; /* Reduced from 1.3rem */
-    margin-bottom: 30px; /* Reduced from 40px */
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeInUp 1.2s ease;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    animation: fadeInUp 1.4s ease;
-}
-
-/* About Section - COMPACT VERSION */
-.about-image-slider {
-    animation: float 6s ease-in-out infinite; /* Add this line */
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px; /* Reduced spacing */
-    align-items: start;
-}
-
-.about-text h3 {
-    font-size: 1.8rem; /* Reduced */
-    color: var(--primary);
-    margin-bottom: 20px; /* Reduced */
-    line-height: 1.3;
-}
-
-.about-text p {
-    margin-bottom: 15px; /* Reduced */
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.highlight {
-    background: var(--light);
-    padding: 20px; /* Reduced */
-    border-radius: 8px;
-    border-left: 4px solid var(--accent);
-    margin: 20px 0; /* Reduced */
-}
-
-/* About Section - Slider Styles */
-.about-image-slider {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    height: 400px; /* Reduced */
-    position: relative;
-}
-
-.slider-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    width: 400%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    width: 25%;
-    height: 100%;
-    position: relative;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.slide:hover img {
-    transform: scale(1.05);
-}
-
-.service-name {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: white;
-    padding: 12px 15px; /* Reduced */
-    font-size: 1.1rem; /* Reduced */
-    font-weight: 600;
-    text-align: center;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
-
-.slider-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.7);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s;
-    color: var(--primary);
-}
-
-.slider-nav:hover {
-    background: rgba(255,255,255,0.9);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev {
-    left: 15px;
-}
-
-.next {
-    right: 15px;
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    z-index: 10;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    cursor: pointer;
-    transition: all 0.3s;
-    border: none;
-}
-
-.dot.active {
-    background: white;
-    transform: scale(1.2);
-}
-
-/* Services Section - COMPACT */
-.services {
-    background: var(--light);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px; /* Reduced */
-}
-
-.service-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.4s;
-    transform: translateY(0);
-}
-
-.service-card:hover {
-    transform: translateY(-8px); /* Reduced */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.service-image {
-    width: 100%;
-    height: 220px; /* Reduced */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    overflow: hidden;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.service-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.service-image-content {
-    color: white;
-    text-align: center;
-    padding: 15px; /* Reduced */
-}
-
-.service-image-content i {
-    font-size: 2.5rem; /* Reduced */
-    margin-bottom: 10px; /* Reduced */
-}
-
-.service-image-content h4 {
-    font-size: 1.2rem; /* Reduced */
-}
-
-/* REDUCED SERVICE CONTENT PADDING */
-.service-content {
-    padding: 25px; /* Reduced from 30px */
-}
-
-.service-content h3 {
-    color: var(--primary);
-    margin-bottom: 15px; /* Reduced */
-    font-size: 1.4rem; /* Reduced */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.service-content h3 i {
-    color: var(--accent);
-}
-
-.service-content ul {
-    list-style: none;
-    margin-bottom: 20px; /* Reduced */
-}
-
-.service-content li {
-    margin-bottom: 8px; /* Reduced */
-    padding-left: 25px;
-    position: relative;
-    font-size: 1rem; /* Reduced */
-}
-
-.service-content li::before {
-    content: "✔";
-    color: var(--accent);
-    font-size: 1.1rem; /* Reduced */
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-/* Portfolio Section */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px; /* Reduced */
-}
-
-.portfolio-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 250px; /* Reduced */
-    box-shadow: var(--shadow);
-    transition: all 0.4s;
-    cursor: pointer;
-}
-
-.portfolio-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.portfolio-item:hover img {
-    transform: scale(1.1);
-}
-
-.portfolio-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 15px; /* Reduced */
-    transform: translateY(100%);
-    transition: transform 0.3s;
-}
-
-.portfolio-item:hover .portfolio-content {
-    transform: translateY(0);
-}
-
-.portfolio-content h3 {
-    font-size: 1.3rem; /* Reduced */
-    margin-bottom: 8px; /* Reduced */
-}
-
-/* Mobile Responsive Adjustments */
-@media (max-width: 992px) {
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .about-image-slider {
-        order: -1;
-        height: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 40px 0; /* Further reduced on mobile */
-    }
-    
-    .hero {
-        height: 85vh;
-        padding-top: 60px;
-    }
-    
-    .hero h2 {
-        font-size: 2.2rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-        margin-bottom: 25px;
-    }
-    
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
-    
-    .about-image-slider {
-        height: 300px;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    section {
-        padding: 30px 0;
-    }
-    
-    .hero {
-        height: 80vh;
-        padding-top: 50px;
-    }
-    
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-    
-    .section-title {
-        margin-bottom: 25px;
-    }
-    
-    .section-title h2 {
-        font-size: 1.6rem;
-        padding-bottom: 8px;
-    }
-    
-    .about-image-slider {
-        height: 250px;
-    }
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-        
+        /* Enhanced Styles */
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #003d82;
+            --secondary: #333;
+            --accent: #ff7d00;
+            --accent-dark: #e67100;
+            --light: #f8f9fa;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --text: #444;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --ai-primary: #6a11cb;
+            --ai-secondary: #2575fc;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9fbfd;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(255, 125, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(255, 125, 0, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(18, 140, 126, 0.4);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin: 20px 0;
+        }
+
+        /* About Section - Slider Styles */
+        .about-image-slider {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 25%;
+            height: 100%;
+            position: relative;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 12px 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            color: var(--primary);
+        }
+
+        .slider-nav:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev {
+            left: 15px;
+        }
+
+        .next {
+            right: 15px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-content h3 i {
+            color: var(--accent);
+        }
+
+        .service-content ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .service-content li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .service-content li::before {
+            content: "✔";
+            color: var(--accent);
+            font-size: 1.1rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-content {
+            transform: translateY(0);
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--light);
+            padding: 50px 0;
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            display: block;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .map-address {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .map-directions {
+            background: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .map-directions:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
         /* Client Logos Section */
         .clients-section {
             background: #f9f9f9;
@@ -710,7 +613,6 @@ nav ul li a:hover::after {
             color: #333;
         }
 
-        /* Slider wrapper */
         .logo-slider {
             position: relative;
             width: max-content;
@@ -718,7 +620,6 @@ nav ul li a:hover::after {
             cursor: grab;
         }
 
-        /* Track */
         .logo-track {
             display: flex;
             width: max-content;
@@ -726,34 +627,24 @@ nav ul li a:hover::after {
         }
 
         .logo-track img {
-    height: 80px;
-    width: 150px;
-    margin: 0 40px;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
+            height: 80px;
+            width: 150px;
+            margin: 0 40px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
 
-.logo-track img:hover {
-    transform: scale(1.1);
-    transform-origin: center;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); /* only shadow on hover */
-}
+        .logo-track img:hover {
+            transform: scale(1.1);
+            transform-origin: center;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
 
-
-        /* Infinite scrolling */
         @keyframes scroll {
             0%   { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
 
-        /* Mobile view */
-        @media (max-width: 768px) {
-            .logo-track img {
-                height: 50px;
-                margin: 0 20px;
-            }
-        }
-        
         /* Why Choose Us Section */
         .why-us {
             background: linear-gradient(to right, var(--primary), var(--primary-dark));
@@ -801,28 +692,33 @@ nav ul li a:hover::after {
             font-size: 2.2rem;
             color: var(--accent);
         }
-        
-        .feature h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-        
+
         /* Testimonials Section */
         .testimonials {
             background: var(--light);
         }
         
+        .testimonial-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
         .testimonial-slides {
-  display: flex;
-  transition: transform 0.5s ease;
-  will-change: transform;
-}
-
-.testimonial-slide {
-  flex: 0 0 100%;
-  box-sizing: border-box;
-}
-
+            display: flex;
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
+        
+        .testimonial-slide {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
         
         .testimonial-text {
             font-size: 1.25rem;
@@ -863,6 +759,28 @@ nav ul li a:hover::after {
             opacity: 0.8;
         }
         
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-nav button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-nav button.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
         /* Contact Section */
         .contact-container {
             display: grid;
@@ -957,7 +875,7 @@ nav ul li a:hover::after {
             height: 150px;
             resize: vertical;
         }
-        
+
         /* Footer */
         footer {
             background: var(--secondary);
@@ -1043,7 +961,7 @@ nav ul li a:hover::after {
             font-size: 1rem;
             color: #aaa;
         }
-        
+
         /* Success Message */
         #successMessage {
             display: none;
@@ -1055,7 +973,7 @@ nav ul li a:hover::after {
             text-align: center;
             border: 1px solid #c3e6cb;
         }
-        
+
         /* Service Pages */
         .service-page {
             display: none;
@@ -1100,7 +1018,7 @@ nav ul li a:hover::after {
         .service-description {
             margin-bottom: 30px;
         }
-        
+
         /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
@@ -1126,83 +1044,40 @@ nav ul li a:hover::after {
             background-color: #128C7E;
             transform: scale(1.1);
         }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* New Enhancements */
-        
-        /* Project Counter */
-        .counter-section {
-            background: linear-gradient(to right, #2c3e50, #4a6491);
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
             color: white;
-            padding: 60px 0;
-            text-align: center;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
         }
         
-        .counter-item {
-            padding: 30px;
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
         }
-        
-        .counter-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .counter-text {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        /* Interactive Portfolio Modal */
+
+        /* Portfolio Modal */
         .portfolio-modal {
             display: none;
             position: fixed;
@@ -1302,101 +1177,141 @@ nav ul li a:hover::after {
             color: var(--primary);
             margin-bottom: 10px;
         }
+
+        /* Project Counter */
+        .counter-section {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
         
-        /* Testimonial Slider */
-        .testimonial-container {
-            position: relative;
-            max-width: 800px;
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
-            overflow: hidden;
         }
         
-        .testimonial-slides {
-            display: flex;
-            transition: transform 0.5s ease;
+        .counter-item {
+            padding: 30px;
         }
         
-        .testimonial-slide {
-            min-width: 100%;
-            background: var(--white);
-            padding: 40px;
+        .counter-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .counter-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Founder Highlight */
+        .founder-highlight {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .founder-highlight i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        /* Enhanced Map Section */
+        .map-info-card {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: var(--shadow);
+            z-index: 10;
+            max-width: 300px;
         }
-        
-        .testimonial-nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
+
+        .map-info-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
-        
-        .testimonial-nav button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: none;
-            background: #ddd;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .testimonial-nav button.active {
-            background: var(--accent);
-            transform: scale(1.2);
-        }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
+
+        .map-info-card p {
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
+            gap: 10px;
+        }
+
+        .map-info-card i {
+            color: var(--accent);
+            width: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
             justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-5px);
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
-        
-        /* Enhanced Form Validation */
-        .form-group.error input,
-        .form-group.error select,
-        .form-group.error textarea {
-            border-color: #dc3545;
-        }
-        
-        .form-group .error-message {
-            color: #dc3545;
-            font-size: 0.85rem;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        .form-group.error .error-message {
-            display: block;
-        }
-        
-        /* Responsive Styles */
+
+        /* Mobile Responsive Adjustments */
         @media (max-width: 992px) {
             .about-content,
             .contact-container,
@@ -1413,7 +1328,7 @@ nav ul li a:hover::after {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -1439,6 +1354,11 @@ nav ul li a:hover::after {
                 display: block;
             }
             
+            .hero {
+                height: 85vh;
+                padding-top: 60px;
+            }
+            
             .hero h2 {
                 font-size: 2.4rem;
             }
@@ -1448,21 +1368,75 @@ nav ul li a:hover::after {
             }
             
             section {
-                padding: 60px 0;
+                padding: 40px 0;
             }
             
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .map-frame {
+                height: 350px;
+            }
+            
+            .map-overlay {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .about-image-slider {
+                height: 300px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .map-info-card {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 0 auto 20px;
+                max-width: 100%;
+            }
+            
+            .logo-track img {
+                height: 50px;
+                margin: 0 20px;
+            }
         }
-        
+
         @media (max-width: 576px) {
+            section {
+                padding: 30px 0;
+            }
+            
             .hero {
-                height: 90vh;
+                height: 80vh;
+                padding-top: 50px;
             }
             
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                margin-bottom: 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+                padding-bottom: 8px;
+            }
+            
+            .about-image-slider {
+                height: 250px;
+            }
+            
+            .map-frame {
+                height: 300px;
             }
             
             .btn-group {
@@ -1472,10 +1446,6 @@ nav ul li a:hover::after {
             
             .btn-outline {
                 margin-left: 0;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
             }
             
             .contact-form {
@@ -1490,51 +1460,37 @@ nav ul li a:hover::after {
                 font-size: 2.5rem;
             }
         }
-        .founder-highlight {
-    background: var(--light);
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    border-left: 4px solid var(--accent);
-    font-size: 1.1rem;
-}
-
-.founder-highlight i {
-    color: var(--accent);
-    margin-right: 10px;
-}
     </style>
 </head>
 <body>
     <!-- Header -->
-   <header>
-  <div class="container header-container">
-    <div class="logo">
-      <img src="logo.png" alt="Arya-Enterprises-logo" />
-      <div class="logo-text">
-        <h1>ARYA ENTERPRISES</h1>
-        <span>Complete Office & Warehouse Solution</span>
-      </div>
-    </div>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Arya-Enterprises-logo" />
+                <div class="logo-text">
+                    <h1>ARYA ENTERPRISES</h1>
+                    <span>Complete Office & Warehouse Solution</span>
+                </div>
+            </div>
 
-    <!-- Mobile Hamburger -->
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
-      <i class="fas fa-bars"></i>
-    </button>
+            <!-- Mobile Hamburger -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
 
-    <!-- Navigation -->
-    <nav>
-      <ul id="mainMenu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+            <!-- Navigation -->
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1558,31 +1514,31 @@ nav ul li a:hover::after {
             </div>
             <div class="about-content">
                 <div class="about-text">
-    <h3>Building Excellence in Office & Warehouse Solutions Since 2018</h3>
+                    <h3>Building Excellence in Office & Warehouse Solutions Since 2018</h3>
 
-    <p>
-        ARYA ENTERPRISES has been a trusted provider of <strong>commercial and corporate office solutions</strong> since 2018. 
-        We specialize in creating functional, aesthetically pleasing <strong>workspaces</strong> and <strong>warehouse setups</strong> 
-        that enhance productivity and operational efficiency across <strong>Bhiwandi, Mumbai, Delhi, Pune</strong>, and all over India.
-    </p>
+                    <p>
+                        ARYA ENTERPRISES has been a trusted provider of <strong>commercial and corporate office solutions</strong> since 2018. 
+                        We specialize in creating functional, aesthetically pleasing <strong>workspaces</strong> and <strong>warehouse setups</strong> 
+                        that enhance productivity and operational efficiency across <strong>Bhiwandi, Mumbai, Delhi, Pune</strong>, and all over India.
+                    </p>
 
-    <p>
-        Our licensed team brings together expertise in <strong>office interior design</strong>, <strong>modular office furniture</strong>, 
-        <strong>electrical works</strong>, and <strong>warehouse solutions</strong> to deliver turnkey projects with precision and professionalism.
-    </p>
+                    <p>
+                        Our licensed team brings together expertise in <strong>office interior design</strong>, <strong>modular office furniture</strong>, 
+                        <strong>electrical works</strong>, and <strong>warehouse solutions</strong> to deliver turnkey projects with precision and professionalism.
+                    </p>
 
-    <div class="highlight">
-        <p>
-            Committed to quality and customer satisfaction, we've successfully completed numerous projects for businesses 
-            across various industries, helping them optimize their <strong>office and warehouse spaces</strong> for efficiency, safety, and comfort.
-        </p>
-    </div>
+                    <div class="highlight">
+                        <p>
+                            Committed to quality and customer satisfaction, we've successfully completed numerous projects for businesses 
+                            across various industries, helping them optimize their <strong>office and warehouse spaces</strong> for efficiency, safety, and comfort.
+                        </p>
+                    </div>
 
-    <p>
-        Our approach combines innovative design with practical solutions to create environments that inspire creativity, 
-        boost productivity, and provide reliable <strong>office and warehouse infrastructure</strong> solutions in India.
-    </p>
-</div>
+                    <p>
+                        Our approach combines innovative design with practical solutions to create environments that inspire creativity, 
+                        boost productivity, and provide reliable <strong>office and warehouse infrastructure</strong> solutions in India.
+                    </p>
+                </div>
 
                 <div class="about-image-slider">
                     <div class="slider-container">
@@ -1597,7 +1553,7 @@ nav ul li a:hover::after {
                             </div>
                             <div class="slide">
                                 <img src="warehouse-solution/Epoxy-flooring-in-Bhiwandi.jpg" alt="Warehouse Solutions - Industrial storage optimization in Bhiwandi">
-                                <div class="service-name">Warehouse- Epoxy Flooring </div>
+                                <div class="service-name">Warehouse- Epoxy Flooring</div>
                             </div>
                             <div class="slide">
                                 <img src="office-solution/Office-interior.jpg" alt="Interior Design - Modern workspace design in Mumbai">
@@ -1624,65 +1580,65 @@ nav ul li a:hover::after {
 
     <!-- Services Section -->
     <section class="section services" id="services">
-    <div class="container">
-        <div class="section-title">
-            <h2>Complete Office & Warehouse Solutions in Bhiwandi & Across India</h2>
-            <p>We provide end-to-end office and warehouse solutions including modular office furniture, ergonomic chairs, partitions, lighting, electrical systems, warehouse racks installation, epoxy flooring, mezzanine floors, and industrial storage solutions.</p>
-        </div>
-        <div class="services-grid">
-            <!-- Office Solutions -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="office.jpg" alt="Office Solutions in Bhiwandi | Modular Furniture | Ergonomic Chairs">
-                </div>
-                <div class="service-content">
-                    <h3><i class="fas fa-building"></i> Office Solutions</h3>
-                    <ul>
-                        <li><strong>Modular Office Furniture:</strong> Custom workstations, desks, and conference tables for modern offices</li>
-                        <li><strong>Ergonomic Office Chairs:</strong> Comfortable, durable chairs for productivity and health</li>
-                        <li><strong>Aluminum Partitions:</strong> Stylish and durable office partitions for flexible layouts</li>
-                        <li><strong>Lighting & Electrical Systems:</strong> Ceiling lights, spotlights, AC installation, and complete electrical solutions</li>
-                    </ul>
-                    <a href="#service-office" class="btn">Learn More</a>
-                </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete Office & Warehouse Solutions in Bhiwandi & Across India</h2>
+                <p>We provide end-to-end office and warehouse solutions including modular office furniture, ergonomic chairs, partitions, lighting, electrical systems, warehouse racks installation, epoxy flooring, mezzanine floors, and industrial storage solutions.</p>
             </div>
+            <div class="services-grid">
+                <!-- Office Solutions -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="office.jpg" alt="Office Solutions in Bhiwandi | Modular Furniture | Ergonomic Chairs">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-building"></i> Office Solutions</h3>
+                        <ul>
+                            <li><strong>Modular Office Furniture:</strong> Custom workstations, desks, and conference tables for modern offices</li>
+                            <li><strong>Ergonomic Office Chairs:</strong> Comfortable, durable chairs for productivity and health</li>
+                            <li><strong>Aluminum Partitions:</strong> Stylish and durable office partitions for flexible layouts</li>
+                            <li><strong>Lighting & Electrical Systems:</strong> Ceiling lights, spotlights, AC installation, and complete electrical solutions</li>
+                        </ul>
+                        <a href="#service-office" class="btn">Learn More</a>
+                    </div>
+                </div>
 
-            <!-- Electrical Works -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="electrical.jpg" alt="Electrical Works in Bhiwandi | Office & Warehouse Electrical Solutions">
+                <!-- Electrical Works -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="electrical.jpg" alt="Electrical Works in Bhiwandi | Office & Warehouse Electrical Solutions">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-bolt"></i> Electrical Works</h3>
+                        <ul>
+                            <li>Complete electrical installations with certified professionals</li>
+                            <li>Industrial & Office Lighting Solutions including LED, tube lights, and spotlights</li>
+                            <li>Cable management systems and panel works for safety and efficiency</li>
+                            <li>AC installation and preventive maintenance services</li>
+                        </ul>
+                        <a href="#service-electrical" class="btn">Learn More</a>
+                    </div>
                 </div>
-                <div class="service-content">
-                    <h3><i class="fas fa-bolt"></i> Electrical Works</h3>
-                    <ul>
-                        <li>Complete electrical installations with certified professionals</li>
-                        <li>Industrial & Office Lighting Solutions including LED, tube lights, and spotlights</li>
-                        <li>Cable management systems and panel works for safety and efficiency</li>
-                        <li>AC installation and preventive maintenance services</li>
-                    </ul>
-                    <a href="#service-electrical" class="btn">Learn More</a>
-                </div>
-            </div>
 
-            <!-- Warehouse Solutions -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="warehouse-solution/warehouse-storage-solution.jpg" alt="Warehouse Solutions in India | Racks Installation | Epoxy Flooring">
-                </div>
-                <div class="service-content">
-                    <h3><i class="fas fa-warehouse"></i> Warehouse Solutions</h3>
-                    <ul>
-                        <li><strong>Warehouse Racks Installation:</strong> Assemble & dismantle customized storage racks</li>
-                        <li><strong>Epoxy Flooring:</strong> Durable 1mm-3mm industrial flooring with repair services</li>
-                        <li><strong>MS Mezzanine Floors:</strong> Steel structures for optimal storage and space utilization</li>
-                        <li><strong>Warehouse Organization:</strong> Floor & rack marking, safety systems, and industrial lighting solutions</li>
-                    </ul>
-                    <a href="#service-warehouse" class="btn">Learn More</a>
+                <!-- Warehouse Solutions -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="warehouse-solution/warehouse-storage-solution.jpg" alt="Warehouse Solutions in India | Racks Installation | Epoxy Flooring">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-warehouse"></i> Warehouse Solutions</h3>
+                        <ul>
+                            <li><strong>Warehouse Racks Installation:</strong> Assemble & dismantle customized storage racks</li>
+                            <li><strong>Epoxy Flooring:</strong> Durable 1mm-3mm industrial flooring with repair services</li>
+                            <li><strong>MS Mezzanine Floors:</strong> Steel structures for optimal storage and space utilization</li>
+                            <li><strong>Warehouse Organization:</strong> Floor & rack marking, safety systems, and industrial lighting solutions</li>
+                        </ul>
+                        <a href="#service-warehouse" class="btn">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Service Pages -->
     <section id="service-office" class="service-page">
@@ -1713,7 +1669,7 @@ nav ul li a:hover::after {
                 <div>
                     <div class="service-gallery">
                         <!-- Office Solution Images -->
-                        <img src="office-solution/office-interior-modern-design-india.jpg" alt="Modern office interior design solutions in ">
+                        <img src="office-solution/office-interior-modern-design-india.jpg" alt="Modern office interior design solutions in India">
                         <img src="office-solution/office-modular-furniture-workstations.jpg" alt="Ergonomic office furniture and modular workstations in India">
                         <img src="office-solution/Warehouse-office-solution.jpg" alt="Warehouse-office-solution lighting solutions with energy-efficient LED setup in India">
                         <img src="office.jpg" alt="Spacious office layout and smart workplace design in India">
@@ -1823,7 +1779,7 @@ nav ul li a:hover::after {
                     <img src="warehouse-solution/warehouse-storage-solution.jpg" alt="Warehouse Racks Services in Bhiwandi India">
                     <div class="portfolio-content">
                         <h3>Warehouse Transformation</h3>
-                        <p>Racks support & mezzanine floors </p>
+                        <p>Racks support & mezzanine floors</p>
                     </div>
                 </div>
             </div>
@@ -2005,9 +1961,9 @@ nav ul li a:hover::after {
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-<div class="founder-highlight">
-    <i class="fas fa-crown"></i> Founder & Owner: <strong>Mr. Pavan Kumar Yadav</strong>
-</div>
+                    <div class="founder-highlight">
+                        <i class="fas fa-crown"></i> Founder & Owner: <strong>Mr. Pavan Kumar Yadav</strong>
+                    </div>
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">
@@ -2112,6 +2068,58 @@ nav ul li a:hover::after {
             </div>
         </div>
     </section>
+    
+    <!-- Google Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Location</h2>
+                <p>Visit our office in Navi Mumbai or contact us for services across India</p>
+            </div>
+            <div class="map-container">
+                <!-- <div class="map-info-card">
+                    <h3>ARYA ENTERPRISES</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Airoli Station Main Rd, Airoli, Navi Mumbai, Maharashtra 400708</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 9987791755</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 9975146866</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+                </div> -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.49396255078!2d72.99600467330117!3d19.158996549365508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bf4a218fc839%3A0x58bde4dc5f8084f!2sAiroli%20Station%20Main%20Rd%2C%20Airoli%2C%20Navi%20Mumbai%2C%20Maharashtra%20400708!5e1!3m2!1sen!2sin!4v1763619574479!5m2!1sen!2sin" 
+                    class="map-frame" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="ARYA ENTERPRISES Location in Navi Mumbai">
+                </iframe>
+                <div class="map-overlay">
+                    <div class="map-address">
+                        <i class="fas fa-map-marker-alt"></i> 
+                        Airoli Station Main Rd, Airoli, Navi Mumbai, Maharashtra 400708
+                    </div>
+                    <a href="https://maps.google.com/maps?q=Airoli+Station+Main+Rd,+Airoli,+Navi+Mumbai,+Maharashtra+400708" 
+                       target="_blank" 
+                       class="map-directions">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Workspace?</h2>
+                <p>Contact us today for a free consultation and let us help you create the perfect office or warehouse solution for your business.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn">Get Free Consultation</a>
+                    <a href="https://wa.me/919975146866" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -2174,7 +2182,7 @@ nav ul li a:hover::after {
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919975146866" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/919975146866" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
     
@@ -2187,18 +2195,18 @@ nav ul li a:hover::after {
         // Enhanced JavaScript for improved functionality
         
         // Mobile Menu Toggle
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mainMenu = document.getElementById('mainMenu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
 
-mobileMenuBtn.addEventListener('click', () => {
-    mainMenu.classList.toggle('show');
-});
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('show');
+        });
 
-document.querySelectorAll('#mainMenu a').forEach(link => {
-    link.addEventListener('click', () => {
-        mainMenu.classList.remove('show');
-    });
-});
+        document.querySelectorAll('#mainMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainMenu.classList.remove('show');
+            });
+        });
 
         // About Section Slider Functionality
         if (document.querySelector('.about-image-slider')) {
@@ -2576,110 +2584,107 @@ document.querySelectorAll('#mainMenu a').forEach(link => {
             }
         });
         
-     (function() {
-  // --- Data (keep your testimonials) ---
-  const testimonials = [
-    {
-      text: "ARYA ENTERPRISES transformed our warehouse with their excellent Office Interior ,Electrical,CCTV and Rack Systems Work. Their attention to detail was impressive and the project was completed ahead of schedule. The team was professional and responsive throughout the process.",
-      author: "Rahul Ravange",
-      company: "Warehouse Manager"
-    },
-    {
-      text: "The office renovation exceeded our expectations. The team at ARYA ENTERPRISES understood our vision perfectly and delivered a workspace that has significantly improved our team's productivity and morale.",
-      author: "Alok",
-      company: "Purchase & Operation Manager"
-    },
-    {
-      text: "We hired ARYA for Flooring work in our new facility. Their  professionals workmen ensured everything was up to the mark and completed efficiently. Their expertise saved our time and potential headaches down the path way.",
-      author: "Mr.Vipin",
-      company: "Operations Manager"
-    }
-  ];
+        // Testimonials Slider
+        (function() {
+            const testimonials = [
+                {
+                    text: "ARYA ENTERPRISES transformed our warehouse with their excellent Office Interior ,Electrical,CCTV and Rack Systems Work. Their attention to detail was impressive and the project was completed ahead of schedule. The team was professional and responsive throughout the process.",
+                    author: "Rahul Ravange",
+                    company: "Warehouse Manager"
+                },
+                {
+                    text: "The office renovation exceeded our expectations. The team at ARYA ENTERPRISES understood our vision perfectly and delivered a workspace that has significantly improved our team's productivity and morale.",
+                    author: "Alok",
+                    company: "Purchase & Operation Manager"
+                },
+                {
+                    text: "We hired ARYA for Flooring work in our new facility. Their  professionals workmen ensured everything was up to the mark and completed efficiently. Their expertise saved our time and potential headaches down the path way.",
+                    author: "Mr.Vipin",
+                    company: "Operations Manager"
+                }
+            ];
 
-  // --- DOM refs ---
-  const container = document.querySelector('.testimonial-container');
-  const track = document.getElementById('testimonialSlides');
-  const nav = document.getElementById('testimonialNav');
-  if (!container || !track || !nav) return; // safety
+            const container = document.querySelector('.testimonial-container');
+            const track = document.getElementById('testimonialSlides');
+            const nav = document.getElementById('testimonialNav');
+            if (!container || !track || !nav) return;
 
-  // Clear any existing content (if any)
-  track.innerHTML = '';
-  nav.innerHTML = '';
+            // Clear any existing content
+            track.innerHTML = '';
+            nav.innerHTML = '';
 
-  // Build slides + dots
-  testimonials.forEach((t, i) => {
-    const slide = document.createElement('div');
-    slide.className = 'testimonial-slide';
-    slide.innerHTML = `
-      <div class="testimonial-text">${t.text}</div>
-      <div class="testimonial-author">- ${t.author}</div>
-      <div class="testimonial-company">${t.company}</div>
-    `;
-    track.appendChild(slide);
+            // Build slides + dots
+            testimonials.forEach((t, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'testimonial-slide';
+                slide.innerHTML = `
+                    <div class="testimonial-text">${t.text}</div>
+                    <div class="testimonial-author">- ${t.author}</div>
+                    <div class="testimonial-company">${t.company}</div>
+                `;
+                track.appendChild(slide);
 
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.dataset.slide = i;
-    dot.className = i === 0 ? 'active' : '';
-    dot.addEventListener('click', () => {
-      stopAuto();
-      goTo(i);
-      startAuto();
-    });
-    nav.appendChild(dot);
-  });
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.dataset.slide = i;
+                dot.className = i === 0 ? 'active' : '';
+                dot.addEventListener('click', () => {
+                    stopAuto();
+                    goTo(i);
+                    startAuto();
+                });
+                nav.appendChild(dot);
+            });
 
-  let current = 0;
-  let slideInterval = null;
+            let current = 0;
+            let slideInterval = null;
 
-  function goTo(index, animate = true) {
-    current = (index + testimonials.length) % testimonials.length;
-    const w = container.clientWidth;
+            function goTo(index, animate = true) {
+                current = (index + testimonials.length) % testimonials.length;
+                const w = container.clientWidth;
 
-    if (!animate) {
-      // temporarily disable transition for instant reposition (useful on init/resize)
-      track.style.transition = 'none';
-      track.style.transform = `translateX(-${current * w}px)`;
-      // force reflow then restore transition
-      track.getBoundingClientRect();
-      track.style.transition = '';
-    } else {
-      track.style.transform = `translateX(-${current * w}px)`;
-    }
+                if (!animate) {
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(-${current * w}px)`;
+                    track.getBoundingClientRect();
+                    track.style.transition = '';
+                } else {
+                    track.style.transform = `translateX(-${current * w}px)`;
+                }
 
-    // update dots
-    nav.querySelectorAll('button').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
-  }
+                // update dots
+                nav.querySelectorAll('button').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+            }
 
-  function next() { goTo(current + 1); }
-  function startAuto() {
-    stopAuto();
-    slideInterval = setInterval(next, 5000);
-  }
-  function stopAuto() { if (slideInterval) clearInterval(slideInterval); slideInterval = null; }
+            function next() { goTo(current + 1); }
+            function startAuto() {
+                stopAuto();
+                slideInterval = setInterval(next, 5000);
+            }
+            function stopAuto() { if (slideInterval) clearInterval(slideInterval); slideInterval = null; }
 
-  // Pause on hover / touch
-  container.addEventListener('mouseenter', stopAuto);
-  container.addEventListener('mouseleave', startAuto);
-  container.addEventListener('touchstart', stopAuto, {passive: true});
-  container.addEventListener('touchend', startAuto);
+            // Pause on hover / touch
+            container.addEventListener('mouseenter', stopAuto);
+            container.addEventListener('mouseleave', startAuto);
+            container.addEventListener('touchstart', stopAuto, {passive: true});
+            container.addEventListener('touchend', startAuto);
 
-  // Keep alignment on resize
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    // throttle resize reflow
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      goTo(current, false); // reposition without animation
-    }, 80);
-  });
+            // Keep alignment on resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    goTo(current, false);
+                }, 80);
+            });
 
-  // Init
-  goTo(0, false);
-  startAuto();
-})();
+            // Init
+            goTo(0, false);
+            startAuto();
+        })();
+
         // Project Counter Animation
         const counters = document.querySelectorAll('.counter-number');
         const speed = 200;
