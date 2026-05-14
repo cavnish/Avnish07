@@ -53,6 +53,350 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        /* ===============================
+           MODERN ABOUT / FOUNDER SECTION
+        =============================== */
+        .about-modern {
+            background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-modern::before {
+            content: "";
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(255,125,0,0.12) 0%, rgba(255,125,0,0) 70%);
+            z-index: 0;
+        }
+
+        .about-modern::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(0,86,179,0.10) 0%, rgba(0,86,179,0) 70%);
+            z-index: 0;
+        }
+
+        .about-modern .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-grid-modern {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 86, 179, 0.08);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .about-badge i {
+            color: var(--accent);
+        }
+
+        .about-main-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 86, 179, 0.06);
+        }
+
+        .about-main-card h2 {
+            font-size: 2.4rem;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .about-main-card h2 span {
+            color: var(--accent);
+        }
+
+        .about-lead {
+            font-size: 1.08rem;
+            color: #3d4b5c;
+            margin-bottom: 18px;
+            line-height: 1.85;
+        }
+
+        .about-copy {
+            color: #5a6473;
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .about-highlight-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 28px;
+            margin-bottom: 28px;
+        }
+
+        .about-highlight-box {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            border: 1px solid #e5eef9;
+            border-radius: 18px;
+            padding: 20px 18px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .about-highlight-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-highlight-box i {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 125, 0, 0.12);
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-highlight-box h4 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .about-highlight-box p {
+            font-size: 0.94rem;
+            color: #637082;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .about-action-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .about-founder-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .founder-card-modern {
+            background: var(--white);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.10);
+            position: relative;
+            border: 1px solid rgba(0, 86, 179, 0.06);
+        }
+
+        .founder-card-modern img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .founder-social-bar {
+            position: absolute;
+            right: 18px;
+            bottom: 92px;
+            background: var(--accent);
+            padding: 14px 18px;
+            border-radius: 16px;
+            display: flex;
+            gap: 16px;
+            box-shadow: 0 10px 24px rgba(255, 125, 0, 0.35);
+        }
+
+        .founder-social-bar a {
+            color: var(--white);
+            font-size: 1.15rem;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .founder-social-bar a:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .founder-card-info {
+            background: linear-gradient(135deg, #173f8a 0%, #0d2f6b 100%);
+            color: white;
+            padding: 24px 24px 26px;
+        }
+
+        .founder-card-info h3 {
+            font-size: 1.7rem;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .founder-card-info p {
+            margin: 0;
+            color: rgba(255,255,255,0.88);
+            font-size: 1rem;
+        }
+
+        .founder-content-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+            border: 1px solid #edf2f8;
+        }
+
+        .founder-content-card .small-title {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .founder-content-card h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .founder-content-card p {
+            color: #5d6878;
+            line-height: 1.85;
+            margin-bottom: 14px;
+        }
+
+        .founder-points {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .founder-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #4f5d6f;
+            line-height: 1.7;
+            font-size: 0.97rem;
+        }
+
+        .founder-points li i {
+            color: var(--accent);
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+
+        .about-bottom-note {
+            margin-top: 20px;
+            padding: 18px 20px;
+            border-radius: 16px;
+            background: linear-gradient(90deg, rgba(0,86,179,0.08), rgba(255,125,0,0.08));
+            border: 1px solid rgba(0, 86, 179, 0.08);
+            color: #425163;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 992px) {
+            .about-grid-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .about-highlight-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-card-modern img {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-main-card,
+            .founder-content-card {
+                padding: 25px 20px;
+            }
+
+            .about-main-card h2 {
+                font-size: 2rem;
+            }
+
+            .founder-content-card h3 {
+                font-size: 1.7rem;
+            }
+
+            .founder-social-bar {
+                right: 14px;
+                bottom: 86px;
+                gap: 14px;
+                padding: 12px 16px;
+            }
+
+            .founder-card-modern img {
+                height: 340px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-main-card h2 {
+                font-size: 1.65rem;
+            }
+
+            .about-lead,
+            .about-copy,
+            .founder-content-card p {
+                font-size: 0.96rem;
+            }
+
+            .founder-card-modern img {
+                height: 300px;
+            }
+
+            .founder-card-info h3 {
+                font-size: 1.4rem;
+            }
+
+            .about-action-row {
+                flex-direction: column;
+            }
+
+            .about-action-row .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
 
         section {
             padding: 50px 0;
@@ -1507,76 +1851,128 @@
     </section>
 
     <!-- About Section -->
-    <section class="section" id="about">
+        <!-- About Section -->
+    <section class="section about-modern" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>About Us</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Building Excellence in Office & Warehouse Solutions Since 2018</h3>
 
-                    <p>
-                        ARYA ENTERPRISES has been a trusted provider of <strong>commercial and corporate office solutions</strong> since 2018. 
-                        We specialize in creating functional, aesthetically pleasing <strong>workspaces</strong> and <strong>warehouse setups</strong> 
-                        that enhance productivity and operational efficiency across <strong>Bhiwandi, Mumbai, Delhi, Pune</strong>, and all over India.
-                    </p>
-
-                    <p>
-                        Our licensed team brings together expertise in <strong>office interior design</strong>, <strong>modular office furniture</strong>, 
-                        <strong>electrical works</strong>, and <strong>warehouse solutions</strong> to deliver turnkey projects with precision and professionalism.
-                    </p>
-
-                    <div class="highlight">
-                        <p>
-                            Committed to quality and customer satisfaction, we've successfully completed numerous projects for businesses 
-                            across various industries, helping them optimize their <strong>office and warehouse spaces</strong> for efficiency, safety, and comfort.
-                        </p>
+            <div class="about-grid-modern">
+                <!-- Left Content -->
+                <div class="about-main-card">
+                    <div class="about-badge">
+                        <i class="fas fa-layer-group"></i>
+                        Trusted Office & Warehouse Partner
                     </div>
 
-                    <p>
-                        Our approach combines innovative design with practical solutions to create environments that inspire creativity, 
-                        boost productivity, and provide reliable <strong>office and warehouse infrastructure</strong> solutions in India.
+                    <h2>Building <span>practical, scalable, and modern</span> business spaces across India</h2>
+
+                    <p class="about-lead">
+                        Since 2018, <strong>ARYA ENTERPRISES</strong> has been helping businesses create
+                        efficient, functional, and professionally executed office and warehouse environments.
+                        From office interiors and modular setups to electrical systems and warehouse infrastructure,
+                        we deliver solutions that are built for daily performance and long-term reliability.
                     </p>
+
+                    <p class="about-copy">
+                        We work with companies across <strong>Bhiwandi, Mumbai, Delhi, Pune</strong> and other parts of India,
+                        providing end-to-end execution for <strong>office solutions, electrical works, and warehouse improvements</strong>.
+                        Our approach is simple: understand the requirement clearly, plan the execution properly, and deliver quality work on time.
+                    </p>
+
+                    <p class="about-copy">
+                        Whether it is a modern office setup, warehouse rack assembly, epoxy flooring,
+                        mezzanine work, lighting, partitions, or complete workspace enhancement,
+                        our focus remains on <strong>durability, efficiency, safety, and professional finishing</strong>.
+                    </p>
+
+                    <div class="about-highlight-strip">
+                        <div class="about-highlight-box">
+                            <i class="fas fa-building"></i>
+                            <h4>Workspace Expertise</h4>
+                            <p>Modern office interiors, modular furniture layouts, partitions, lighting, and support systems designed for productivity.</p>
+                        </div>
+
+                        <div class="about-highlight-box">
+                            <i class="fas fa-warehouse"></i>
+                            <h4>Warehouse Capability</h4>
+                            <p>Warehouse racks installation, dismantling, epoxy flooring, mezzanine solutions, and organized industrial space execution.</p>
+                        </div>
+
+                        <div class="about-highlight-box">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Reliable Execution</h4>
+                            <p>Professional coordination, quality materials, trained manpower, and a commitment to timely delivery on every project.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-bottom-note">
+                        We don’t just complete projects — we create business-ready environments that support smoother operations,
+                        stronger presentation, and better day-to-day efficiency for our clients.
+                    </div>
+
+                    <div class="about-action-row">
+                        <a href="#contact" class="btn">Get Free Consultation</a>
+                        <a href="#services" class="btn btn-outline">Explore Our Services</a>
+                    </div>
                 </div>
 
-                <div class="about-image-slider">
-                    <div class="slider-container">
-                        <div class="slides">
-                            <div class="slide active">
-                                <img src="office-solution/Warehouse-office-solution.jpg" alt="Office Solutions - Professional office interior design services">
-                                <div class="service-name">Office Solutions</div>
-                            </div>
-                            <div class="slide">
-                                <img src="office-solution/Warehouse-Racks-Assemble.png" alt="Warehouse-Racks-Assemble & Commercial electrical installations in Bhiwandi">
-                                <div class="service-name">Warehouse-Racks Assemble</div>
-                            </div>
-                            <div class="slide">
-                                <img src="warehouse-solution/Epoxy-flooring-in-Bhiwandi.jpg" alt="Warehouse Solutions - Industrial storage optimization in Bhiwandi">
-                                <div class="service-name">Warehouse- Epoxy Flooring</div>
-                            </div>
-                            <div class="slide">
-                                <img src="office-solution/Office-interior.jpg" alt="Interior Design - Modern workspace design in Mumbai">
-                                <div class="service-name">Interior Design</div>
-                            </div>
+                <!-- Right Content -->
+                <div class="about-founder-wrap">
+                    <div class="founder-card-modern">
+                        <img src="Owner.jpeg" alt="Founder profile">
+
+                        <div class="founder-social-bar">
+                            <a href="https://www.facebook.com/profile.php?id=61578770575265" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/arya-enterprises-8716132b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/_arya_enterprises?igsh=dXY4MG54aG5oYWE3&utm_source=qr" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
-                        
-                        <!-- Navigation arrows -->
-                        <button class="slider-nav prev" aria-label="Previous slide">&#10094;</button>
-                        <button class="slider-nav next" aria-label="Next slide">&#10095;</button>
-                        
-                        <!-- Dots indicator -->
-                        <div class="slider-dots">
-                            <span class="dot active" data-slide="0" aria-label="Slide 1"></span>
-                            <span class="dot" data-slide="1" aria-label="Slide 2"></span>
-                            <span class="dot" data-slide="2" aria-label="Slide 3"></span>
-                            <span class="dot" data-slide="3" aria-label="Slide 4"></span>
+
+                        <div class="founder-card-info">
+                            <h3>Mr. Pavan Kumar Yadav</h3>
+                            <p>Founder & Owner</p>
                         </div>
+                    </div>
+
+                    <div class="founder-content-card">
+                        <span class="small-title">Leadership</span>
+                        <h3>Driven by execution, quality, and long-term client trust</h3>
+
+                        <p>
+                            Under the leadership of <strong>Mr. Pavan Kumar Yadav</strong>, ARYA ENTERPRISES
+                            has developed a reputation for dependable project execution in office and warehouse environments.
+                            The company’s strength lies in understanding practical site needs and converting them into
+                            efficient, well-finished, and commercially valuable solutions.
+                        </p>
+
+                        <p>
+                            Our work philosophy is built around responsiveness, transparency, technical coordination,
+                            and strong delivery standards. Every project is approached with attention to functionality,
+                            layout efficiency, operational comfort, and long-term usability.
+                        </p>
+
+                        <ul class="founder-points">
+                            <li><i class="fas fa-check-circle"></i> Turnkey support for office and warehouse project requirements</li>
+                            <li><i class="fas fa-check-circle"></i> Focus on practical design, efficient use of space, and project discipline</li>
+                            <li><i class="fas fa-check-circle"></i> Strong commitment to safety, finish quality, and timely completion</li>
+                            <li><i class="fas fa-check-circle"></i> Built to support growing businesses with scalable infrastructure solutions</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="section services" id="services">
